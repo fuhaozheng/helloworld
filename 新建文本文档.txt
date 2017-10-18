@@ -1,0 +1,20 @@
+private void openCamera(SurfaceTexture texture) throws IOException {
+        if (mCamera == null) {
+            mCamera = Camera.open();
+            Camera.Parameters mParameters = mCamera.getParameters();
+            mParameters.setPreviewSize(1920, 1080);
+            mCamera.setParameters(mParameters);
+            mCamera.setPreviewTexture(texture);
+            mCamera.startPreview();
+        }
+    }
+
+    private void releaseCamera() {
+        if (mCamera != null) {
+            mCamera.stopPreview();
+            mCamera.release();
+            mCamera = null;
+        }
+    }
+
+http://exmail.qq.com/cgi-bin/ftnExs_download?k=7f66383465e3e6d66a86e71c4139020b185f5901525f510d524b090d510c180d075e5b19040e0c081a560e065009540a53575e50033927396e570a195409040e1a56011954081b435e16380a&t=exs_ftn_download&code=7f84f959&s=email
